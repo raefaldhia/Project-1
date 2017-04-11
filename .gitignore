@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Allow
+!.gitignore
+!LICENSE
+!*.md
+
+# Including subdirectory
+!*/
