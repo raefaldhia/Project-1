@@ -4,7 +4,12 @@
 # Allow
 !.gitignore
 !LICENSE
+!*.asm
+!*.cfg
+!*.d
+!*.ld
 !*.md
+!*.pdf
 
 # Including subdirectory
 !*/
