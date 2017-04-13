@@ -19,6 +19,10 @@ Tugas `bootloader` adalah memindahkan kendalinya kepada `Operating System`.
 `Operating System` adalah sebuah `software` untuk mengatur komputer seperti
 menjalankan applikasi.
 
+Selanjutnya
+===========
+`src/main.asm`
+
 Sumber referensi
 ================
   https://littleosbook.github.io/
