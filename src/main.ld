@@ -1,12 +1,23 @@
+OUTPUT_FORMAT(elf64-x86-64)
+
 ENTRY(main)
-OUTPUT_FORMAT(elf32-i386)
 
 SECTIONS {
-    . = 0x00100000;
+    . = 1M;
 
     .text :
     {
-		*(.multiboot_header)
+        *(.multiboot)
         *(.text)
+    }
+
+    .rodata :
+    {
+        *(.rodata)
+    }
+
+    .bss :
+    {
+        *(.bss)
     }
 }

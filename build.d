@@ -47,10 +47,11 @@ int main(string[] args)
     getopt(args, "q|quiet", &Quiet,
                  "v|verbose", &Verbose);
 
-    exec("ldc -m32 -c -defaultlib=false -debuglib=false -code-model=kernel -w -of=bin/obj/src/kernel/kernel.o src/kernel/kernel.d");
+    exec("ldc -m64 -c -defaultlib=false -debuglib=false -code-model=kernel -w -of=bin/obj/src/kernel/kernel.o src/kernel/kernel.d");
     exec("fasm src/main.asm bin/obj/src/main.o");
-    exec("ld -m elf_i386 -nostdlib -nodefaultlibs -T src/main.ld -o bin/os/os.bin bin/obj/src/main.o bin/obj/src/kernel/kernel.o");
-    exec("grub-mkrescue -o /bin/os.iso /bin/os");
+    
+    exec("ld -m elf_x86_64 -nostdlib -nodefaultlibs -T src/main.ld -o bin/os/os.bin bin/obj/src/main.o  bin/obj/src/kernel/kernel.o");
+    exec("grub-mkrescue -o bin/os.iso bin/os");
 
     writeln("build success.");
     return 0;
